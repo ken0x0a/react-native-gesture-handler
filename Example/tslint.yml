@@ -3,17 +3,24 @@ extends:
 # https://palantir.github.io/tslint/rules/
 rules:
   no-implicit-dependencies: [true, [
-    "@src",
+    # self
+    "@assets",
     "@cacicolle/logger",
     "@cacicolle/auth",
+    "@src",
     "tab-view",
     "react-native-header-tab-view",
+
+    # react-navigation
+    "react-native-safe-area-view",
+
+    # Expo
     "react-native-svg",
     "react-native-vector-icons",
-    "react-native-safe-area-view",
+    "react-native-gesture-handler",
+
     "hoist-non-react-statics",
-    "@storybook", "@story",
-    "@assets"
+    "@storybook", "@story"
   ]]
   no-submodule-imports: [true,
     "@src",

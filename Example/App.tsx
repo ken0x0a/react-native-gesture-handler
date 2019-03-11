@@ -2,30 +2,34 @@ import * as React from 'react';
 import { FlatList, StyleSheet, Text, View, YellowBox } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import BottomSheet from './bottomSheet';
-import Bouncing from './bouncing';
-import ChatHeads from './chatHeads';
-// import { ComboWithGHScroll, ComboWithRNScroll } from "./combo";
-import doubleDraggable from './doubleDraggable';
-import doubleScalePinchAndRotate from './doubleScalePinchAndRotate';
-import Draggable from './draggable';
-import Fling from './fling';
-import forceTouch from './forcetouch';
-import HorizontalDrawer from './horizontalDrawer';
-import Multitap from './multitap';
-// import PagerAndDrawer from './pagerAndDrawer';
-import PanAndScroll from './panAndScroll';
-import PanResponder from './panResponder';
-import Rows from './rows';
-import ScaleAndRotate from './scaleAndRotate';
-import SwipeableTable from './swipeable';
-import { TouchableExample, TouchablesIndex } from './touchables';
+import BottomSheet from './src/bottom-sheet';
+import Bouncing from './src/bouncing';
+import ChatHeads from './src/chatHeads';
+// import { ComboWithGHScroll, ComboWithRNScroll } from "./src/combo";
+import doubleDraggable from './src/doubleDraggable';
+import doubleScalePinchAndRotate from './src/doubleScalePinchAndRotate';
+import Draggable from './src/draggable';
+import Fling from './src/fling';
+import forceTouch from './src/forcetouch';
+import HorizontalDrawer from './src/horizontalDrawer';
+import Multitap from './src/multitap';
+// import PagerAndDrawer from './src/pagerAndDrawer';
+import PanAndScroll from './src/panAndScroll';
+import PanResponder from './src/panResponder';
+import Rows from './src/rows';
+import ScaleAndRotate from './src/scaleAndRotate';
+import SwipeableTable from './src/swipeable';
+import { TouchableExample, TouchablesIndex } from './src/touchables';
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 // refers to bug in React Navigation which should be fixed soon
 // https://github.com/react-navigation/react-navigation/issues/3956
 
 const SCREENS = {
+  BottomSheet: {
+    title: 'BottomSheet gestures interactions',
+    screen: BottomSheet
+  },
   Rows: { screen: Rows, title: 'Table rows & buttons' },
   Multitap: { screen: Multitap },
   Draggable: { screen: Draggable },
@@ -58,10 +62,6 @@ const SCREENS = {
   //   title: 'Chat Heads (no native animated support yet)',
   // },
   // Combo: { screen: ComboWithGHScroll },
-  BottomSheet: {
-    title: 'BottomSheet gestures interactions',
-    screen: BottomSheet
-  },
   // ComboWithRNScroll: {
   //   screen: ComboWithRNScroll,
   //   title: "Combo with RN's ScrollView"
@@ -81,10 +81,10 @@ const SCREENS = {
 };
 
 class MainScreen extends React.Component {
-  static navigationOptions = {
+  public static navigationOptions = {
     title: '✌️ Gesture Handler Demo'
   };
-  render() {
+  public render() {
     const data = Object.keys(SCREENS).map(key => ({ key }));
     return (
       <FlatList
@@ -103,8 +103,8 @@ class MainScreen extends React.Component {
 const ItemSeparator = () => <View style={styles.separator} />;
 
 class MainScreenItem extends React.Component {
-  _onPress = () => this.props.onPressItem(this.props.item);
-  render() {
+  public _onPress = () => this.props.onPressItem(this.props.item);
+  public render() {
     const { key } = this.props.item;
     return (
       <RectButton style={styles.button} onPress={this._onPress}>

@@ -1,24 +1,24 @@
-import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   lipsum: {
-    padding: 10,
-  },
+    padding: 10
+  }
 });
 
-export class LoremIpsum extends React.Component {
-  static defaultProps = {
+export class LoremIpsum extends React.Component<any, any> {
+  public static defaultProps = {
     words: 1000,
-    style: styles.lipsum,
+    style: styles.lipsum
   };
-  loremIpsum() {
+  public render() {
+    return <Text style={this.props.style}>{this.loremIpsum()}</Text>;
+  }
+  private loremIpsum() {
     return LOREM_IPSUM.split(' ')
       .slice(0, this.props.words)
       .join(' ');
-  }
-  render() {
-    return <Text style={this.props.style}>{this.loremIpsum()}</Text>;
   }
 }
 
