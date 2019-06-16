@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Example of react-native-gesture-handler @ Expo",
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "33.0.0",
     "slug": "react-native-gesture-handler",
     "version": "1.0.0",
     "platforms": [
