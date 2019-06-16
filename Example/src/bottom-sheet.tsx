@@ -62,9 +62,9 @@ export class BottomSheet extends React.Component<BottomSheetProps, BottomSheetSt
     this._onRegisterLastScroll = Animated.event([{ nativeEvent: { contentOffset: { y: this._lastScrollY } } }], {
       useNativeDriver: USE_NATIVE_DRIVER
     });
-    this._lastScrollY.addListener(({ value }) => {
-      this._lastScrollYValue = value;
-    });
+    // this._lastScrollY.addListener(({ value }) => {
+    //   this._lastScrollYValue = value;
+    // });
 
     this._dragY = new Animated.Value(0);
     this._onGestureEvent = Animated.event([{ nativeEvent: { translationY: this._dragY } }], {
@@ -92,7 +92,10 @@ export class BottomSheet extends React.Component<BottomSheetProps, BottomSheetSt
         maxDeltaY={this.state.lastSnap - SNAP_POINTS_FROM_TOP[0]}
       >
         <View
-          style={[StyleSheet.absoluteFillObject, { shadowRadius: 1, shadowColor: 'black', shadowOpacity: 0.075 }]}
+          style={[
+            StyleSheet.absoluteFillObject,
+            { shadowRadius: StyleSheet.hairlineWidth, shadowColor: 'black', shadowOpacity: 0.075 }
+          ]}
           pointerEvents="box-none"
         >
           <Animated.View
