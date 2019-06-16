@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "precommit": "lint-staged"
+    "precommit_": "lint-staged"
   },
   "main": "index.js",
   "types": "react-native-gesture-handler.d.ts",
