@@ -5,7 +5,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import BottomSheet from './src/bottom-sheet';
 import Bouncing from './src/bouncing';
 import ChatHeads from './src/chatHeads';
-// import { ComboWithGHScroll, ComboWithRNScroll } from "./src/combo";
+import { ComboWithGHScroll, ComboWithRNScroll } from './src/combo';
 import doubleDraggable from './src/doubleDraggable';
 import doubleScalePinchAndRotate from './src/doubleScalePinchAndRotate';
 import Draggable from './src/draggable';
@@ -13,7 +13,7 @@ import Fling from './src/fling';
 import forceTouch from './src/forcetouch';
 import HorizontalDrawer from './src/horizontalDrawer';
 import Multitap from './src/multitap';
-// import PagerAndDrawer from './src/pagerAndDrawer';
+import PagerAndDrawer from './src/pagerAndDrawer';
 import PanAndScroll from './src/panAndScroll';
 import PanResponder from './src/panResponder';
 import Rows from './src/rows';
@@ -38,7 +38,7 @@ const SCREENS = {
     screen: doubleScalePinchAndRotate,
     title: 'Scale, rotate & tilt & more'
   },
-  // PagerAndDrawer: { screen: PagerAndDrawer, title: 'Android pager & drawer' },
+  PagerAndDrawer: { screen: PagerAndDrawer, title: 'Android pager & drawer' },
   HorizontalDrawer: {
     screen: HorizontalDrawer,
     title: 'Gesture handler based DrawerLayout'
@@ -57,15 +57,15 @@ const SCREENS = {
   },
   PanResponder: { screen: PanResponder },
   Bouncing: { screen: Bouncing, title: 'Twist & bounce back animation' },
-  // ChatHeads: {
-  //   screen: ChatHeads,
-  //   title: 'Chat Heads (no native animated support yet)',
-  // },
-  // Combo: { screen: ComboWithGHScroll },
-  // ComboWithRNScroll: {
-  //   screen: ComboWithRNScroll,
-  //   title: "Combo with RN's ScrollView"
-  // },
+  ChatHeads: {
+    screen: ChatHeads,
+    title: 'Chat Heads (no native animated support yet)'
+  },
+  Combo: { screen: ComboWithGHScroll },
+  ComboWithRNScroll: {
+    screen: ComboWithRNScroll,
+    title: "Combo with RN's ScrollView"
+  },
   doubleDraggable: {
     screen: doubleDraggable,
     title: 'Two handlers simultaneously'
